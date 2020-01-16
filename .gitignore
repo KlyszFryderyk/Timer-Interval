@@ -25,6 +25,7 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+bin/
 MANIFEST
 
 # PyInstaller
@@ -73,6 +74,7 @@ docs/_build/
 
 # PyBuilder
 target/
+.buildozer/
 
 # Jupyter Notebook
 .ipynb_checkpoints

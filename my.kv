@@ -1,0 +1,61 @@
+<MyGrid>
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:3
+
+            Button:
+                text:"-"
+                font_size:100
+                on_press: root.dec_tor()
+
+            TextInput:
+                multiline:False
+                font_size:70
+                halign:"center"
+                text: str(root.time_of_round)
+                readonly:True
+
+            Button:
+                text:"+"
+                font_size:100
+                on_press: root.inc_tor()
+
+            Button:
+                text:"-"
+                font_size:100
+                on_press: root.dec_torest()
+
+            TextInput:
+                multiline:False
+                font_size:70
+                halign:"center"
+                text: str(root.time_of_rest)
+                readonly:True
+
+            Button:
+                text:"+"
+                font_size:100
+                on_press: root.inc_torest()
+
+            Button:
+                text:"-"
+                font_size:100
+                on_press: root.dec_nor()
+
+            TextInput:
+                multiline:False
+                font_size:70
+                halign:"center"
+                text: str(root.number_of_rounds)
+                readonly:True
+
+            Button:
+                text:"+"
+                font_size:100
+                on_press: root.inc_nor()
+
+        Button:
+            text:"Submit"
