@@ -1,7 +1,14 @@
-<MyGrid>
+<Menu>
     GridLayout:
         cols:1
         size: root.width, root.height
+
+        GridLayout:
+            cols:1
+            size: root.width, root.height
+
+            Label:
+                text:"Time of round"
 
         GridLayout:
             cols:3
@@ -14,7 +21,9 @@
             TextInput:
                 multiline:False
                 font_size:70
+                size: root.width, root.height
                 halign:"center"
+                valign:"middle"
                 text: str(root.time_of_round)
                 readonly:True
 
@@ -22,6 +31,16 @@
                 text:"+"
                 font_size:100
                 on_press: root.inc_tor()
+
+        GridLayout:
+            cols:1
+            size: root.width, root.height
+
+            Label:
+                text:"Time of rest"
+
+        GridLayout:
+            cols:3
 
             Button:
                 text:"-"
@@ -40,17 +59,28 @@
                 font_size:100
                 on_press: root.inc_torest()
 
+        GridLayout:
+            cols:1
+            size: root.width, root.height
+
+            Label:
+                text:"Number of rounds"
+
+        GridLayout:
+            cols:3
+
             Button:
                 text:"-"
                 font_size:100
                 on_press: root.dec_nor()
 
             TextInput:
+                id: txt
                 multiline:False
                 font_size:70
                 halign:"center"
                 text: str(root.number_of_rounds)
-                readonly:True
+                #readonly:True
 
             Button:
                 text:"+"
@@ -59,3 +89,17 @@
 
         Button:
             text:"Submit"
+            on_press: root.manager.current = 'Counter'
+
+<Counter>:
+    GridLayout:
+        rows:2
+        size: root.width, root.height
+        
+        Button:
+            text: 'My counter button'
+        Button:
+            text: 'Back to menu'
+            size: root.width, 80
+            size_hint: None, None
+            on_press: root.manager.current = 'Menu'
